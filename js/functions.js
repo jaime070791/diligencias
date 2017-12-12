@@ -363,7 +363,27 @@ jQuery(function($){
 			$( '.main-content' ).toggleClass( 'whidth-main-content' );
 			
 		} );
+	}
+
+
+	/*
+	==============================================
+	Scripts cerrar popup
+	==============================================
+	*/
+
+	if ( $( '.btn-close' ).length ) {
+
+		$( '.btn-close' ).on( 'click', function( event ){
+			event.preventDefault();
+
+			// Aplicamos estilos a menu
+			$( '.popup' ).fadeOut();
+			
+		} );
 
 	}
+
+
 
 });

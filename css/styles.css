@@ -104,7 +104,7 @@ li.active .side-nav-down{
 /** Forms **/
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
 	border-bottom: 1px solid #373741;
-    box-shadow: 0 1px 0 0 #373741;
+	box-shadow: 0 1px 0 0 #373741;
 }
 input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
 	color: #373741;
@@ -821,7 +821,7 @@ Styles elements
 	left: 6px;
 }
 
-.whidth-menu-btn i{
+.whidth-menu-btn span{
 	transform: rotate( 180deg );
 	display: inline-block;
 }
@@ -869,4 +869,131 @@ Styles botones
 
 .btn-simple .icon-btn{
 	padding-left: 0px;
+}
+
+
+/*
+==============================================
+Styles popup
+==============================================
+*/
+
+.popup{
+	position: absolute;
+	z-index: 999999;
+	top: 8%;
+	width: 80%;
+	max-width: 600px; 
+	right: 0px;
+	left: 0px;
+	margin: 0px auto;
+	box-shadow: 2px 4px 16px -3px #757575;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.popup-title{
+	background: #373741;
+	color: #fff;
+	padding: 4px 15px;
+	font-size: 21px;
+
+}
+
+.popup-title .icon-cancel{
+	float: right;
+	line-height: 33px;
+}
+
+.popup-content{
+	background: #fff;
+	padding: 30px 20px 20px;
+	overflow: auto;
+}
+
+.btn-close{
+	cursor: pointer;
+}
+
+.popup-form input[type=text], 
+.popup-form input[type=password], 
+.popup-form input[type=email]{
+	height: 32px;
+	background: #f1f1f1;
+	border: 0px;
+}
+
+.popup-form input[type=text]:focus, 
+.popup-form input[type=password]:focus, 
+.popup-form input[type=email]:focus {
+	border: 0px; 
+	box-shadow: none;
+}
+
+.popup-form .col{
+	padding: 0px;
+	margin-bottom: 9px;
+}
+
+
+[type="checkbox"]:not(:checked), 
+[type="checkbox"]:checked,
+[type="radio"]:not(:checked), 
+[type="radio"]:checked{
+	position: inherit;
+	left: inherit;
+	opacity: 1;
+}
+
+.option-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 23px;
+	width: 23px;
+	transition: all 0.15s ease-out 0s;
+	background: #f1f1f1;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 0.5rem;
+	outline: none;
+	position: relative;
+	z-index: 1000;
+}
+
+.option-input:hover {
+	background: #9faab7;
+}
+
+.option-input:checked {
+	background: #373741;
+}
+
+.option-input:checked::before {
+	height: 23px;
+	width: 23px;
+	position: absolute;
+	content: '✔';
+	display: inline-block;
+	font-size: 15px;
+	text-align: center;
+	line-height: 23px;
+}
+
+
+.option-input.radio {
+	border-radius: 50%;
+}
+
+.option-input.radio::after {
+	border-radius: 50%;
 }
