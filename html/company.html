@@ -1,0 +1,520 @@
+<html>
+	<head>
+		<title>Diligencias</title>
+
+		<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/materialize-stepper.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize-stepper.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed navbar-wrapper">
+				<ul id="dropdown-city" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bogotá D.C.</a></li>
+					<li><a href="#" class="blue-font">Cali</a></li>
+					<li><a href="#" class="blue-font">Medellin</a></li>
+				</ul>
+				<ul id="dropdown-company" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bookink</a></li>
+					<li><a href="#" class="blue-font">Compensar</a></li>
+					<li><a href="#" class="blue-font">Prindel</a></li>
+				</ul>
+				<ul id="dropdown-user" class="dropdown-content">
+					<li><a href="profile.html" class="blue-font">Editar perfil</a></li>
+					<li><a href="new_password.html" class="blue-font">Cambiar contraseña</a></li>
+					<li><a href="roles.html" class="blue-font">Editar permisos</a></li>
+					<li class="divider"></li>
+					<li><a href="index.html" class="blue-font">Cerrar sesión</a></li>
+				</ul>
+				<nav class="white">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo red-container">
+							<img src="../img/diligencias blanco h.png">
+						</a>
+						<ul class="right">
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-city"><span id="city-selected">Ciudad </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-company"><span id="company-selected">Empresa </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li><a class="dropdown-button blue-font" href="#" data-activates="dropdown-user">Nombre de usuario<i class="material-icons right no-margin">arrow_drop_down</i><img src="../img/user.jpg" class="responsive-img circle right avatar"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<ul id="side-nav" class="side-nav fixed">
+				<li><a href="home.html"><i class="material-icons left">av_timer</i>Diligencias</a></li>
+				<li><a href="invoices.html"><i class="material-icons left">library_books</i>Facturación</a></li>
+				<li><a href="drivers.html"><i class="material-icons left">motorcycle</i>Mensajeros</a></li>
+				<li><a href="users.html"><i class="material-icons left">people</i>Usuarios</a></li>
+				<li class="active"><a href="companies.html"><i class="material-icons left">domain</i>Organizaciones</a></li>
+				<li><a href="reports.html"><i class="material-icons left">timeline</i>Reportes</a></li>
+			</ul>
+			<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+		</header>
+		<main class="main-content">
+			<div class="row bar-row">
+				<div class="col s12 m6">
+					<a href="home.html" class="blue-font prefix"><i class="material-icons left bar-icon">arrow_backward</i></a>
+					<h4>Detalles de la organización</h4>
+				</div>
+				<div class="col s12 m6 right-align">
+					<a class="btn waves-effect red-container">Actualizar datos</a>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12">
+					<div class="card blue-container">
+						<div class="card-content">
+							<span class="card-title white-text">
+								<span>Información general</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m3 center">
+									<img src="../img/company.png" class="square">
+									<div style="margin-top: 20px">
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star_half</i>
+										<i class="material-icons white-text">star_border</i>
+									</div>
+								</div>
+								<div class="col s12 m9">
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="status" id="status" value="Activo" disabled>
+												<label for="status">Estado</label>
+											</div>
+										</div>
+										<div class="col s12 m8">
+											<div class="input-field">
+												<input type="text" name="code" id="code" value="AD7919OP" disabled>
+												<label for="code">Código</label>
+											</div>
+										</div>
+									</div>
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="company" id="company" value="Prindel" disabled>
+												<label for="company">Razón social</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="nit" id="nit" value="17632944631" disabled>
+												<label for="nit">Nit</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="payment" id="payment" value="Prepago" disabled>
+												<label for="payment">Tipo de pago</label>
+											</div>
+										</div>
+									</div>
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="user" id="user" value="Astruas Ricon" disabled>
+												<label for="user">Representante legal</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="birthdate" id="birthdate" value="11 de Noviembre de 1976" disabled>
+												<label for="birthdate">Fecha de nacimiento</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="services" id="services" value="47" disabled>
+												<label for="services">Diligencias realizadas</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12 m6">
+					<div class="card white">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información de contacto</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="city" id="city" value="Bogotá D.C." disabled>
+										<label for="city">Ciudad</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="location" id="location" value="Chapinero" disabled>
+										<label for="location">Barrio</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="phone" id="phone" value="8765432" disabled>
+										<label for="phone">Teléfono (1)</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="address" id="address" value="Carrera 22 # 89 - 90" disabled>
+										<label for="address">Dirección de residencia</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="mobile" id="mobile" value="3123123123" disabled>
+										<label for="mobile">Celular (1)</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="email" id="email" value="elmensajero@diligencias.com" disabled>
+										<label for="email">Correo electrónico</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información de pago</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="type" id="type" value="Mensual" disabled>
+										<label for="type">Tipo de pago</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="month" id="month" value="17 de cada mes" disabled>
+										<label for="month">Fecha de cobro mensual</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="invoice_address" id="invoice_address" value="Carrera 22 # 89 - 90" disabled>
+										<label for="invoice_address">Dirección de cobro</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="invoice" id="invoice" value="Astruas Ricon" disabled>
+										<label for="invoice">Facturado a</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="method" id="method" value="Cuenta de cobro" disabled>
+										<label for="method">Forma de pago</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12 m6">
+					<div class="card grey lighten-3">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Contacto interno</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person" id="person" value="Carmen Rojas" disabled>
+										<label for="person">Nombre contacto</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="title" id="title" value="Cargo" disabled>
+										<label for="title">Cargo</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person_email" id="person_email" value="elmensajero@diligencias.com" disabled>
+										<label for="person_email">Correo electrónico</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person_phone" id="person_phone" value="3127634523" disabled>
+										<label for="person_phone">Celular (1)</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card grey lighten-3">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información del servicio</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="amount" id="amount" value="17 de cada mes" disabled>
+										<label for="amount">Tarifa</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="city" id="city" value="Bogotá D.C." disabled>
+										<label for="city">Ciudad</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="invoice_address" id="invoice_address" value="Carrera 22 # 89 - 90" disabled>
+										<label for="invoice_address">Dirección de cobro</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="invoice" id="invoice" value="Astruas Ricon" disabled>
+										<label for="invoice">Facturado a</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12">
+					<h5 class="blue-font">Direcciones de servicio registradas</h5>
+				</div>
+				<div class="col s12 m4">
+					<div class="card white">
+						<div class="card-content">
+							<div class="input-field">
+								<input type="text" name="place_1" id="place_1" value="Sede centro" disabled>
+								<label for="place_1">Lugar</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="address_1" id="address_1" value="Carrera 22 # 89 - 90" disabled>
+								<label for="address_1">Dirección</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="user_1" id="user_1" value="Andres Jaramillo" disabled>
+								<label for="user_1">Representante zona</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="phone_1" id="phone_1" value="(4) 4567890" disabled>
+								<label for="phone_1">Teléfono</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="card white">
+						<div class="card-content">
+							<div class="input-field">
+								<input type="text" name="place_1" id="place_1" value="Sede centro" disabled>
+								<label for="place_1">Lugar</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="address_1" id="address_1" value="Carrera 22 # 89 - 90" disabled>
+								<label for="address_1">Dirección</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="user_1" id="user_1" value="Andres Jaramillo" disabled>
+								<label for="user_1">Representante zona</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="phone_1" id="phone_1" value="(4) 4567890" disabled>
+								<label for="phone_1">Teléfono</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="card white">
+						<div class="card-content">
+							<div class="input-field">
+								<input type="text" name="place_1" id="place_1" value="Sede centro" disabled>
+								<label for="place_1">Lugar</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="address_1" id="address_1" value="Carrera 22 # 89 - 90" disabled>
+								<label for="address_1">Dirección</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="user_1" id="user_1" value="Andres Jaramillo" disabled>
+								<label for="user_1">Representante zona</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="phone_1" id="phone_1" value="(4) 4567890" disabled>
+								<label for="phone_1">Teléfono</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 right-align">
+					<a href="#" class="btn waves-effect btn-white"><i class="material-icons left">add</i> Agregar destinos</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<h5 class="blue-font">Documentos</h5>
+					<div class="collection z-depth-1">
+						<a href="#" class="collection-item blue-font">Fotocopia cédula <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Tarjeta de propiedad moto <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">SOAT de la moto <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Revisión tecnicomecánica <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Licencia conducción <i class="material-icons right">file_download</i></a>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<h5 class="blue-font">Estado de cuenta</h5>
+					<div class="card white">
+						<div class="card-content">
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="collection" id="collection" value="$ 168.800" disabled>
+										<label for="collection">Pago a realizar</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="credit" id="credit" value="$ 252.800" disabled>
+										<label for="credit">Crédito acumulado</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="total" id="total" value="30" disabled>
+										<label for="total">Diligencias realizadas</label>
+									</div>
+								</div>
+							</div>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<a href="#" class="btn waves-effect btn-white btn-full"><i class="material-icons left">attach_money</i> Cruce de cuentas</a>
+								</div>
+								<div class="col s12 m6">
+									<a href="#history" class="btn waves-effect btn-white btn-full"><i class="material-icons left">motorcycle</i> Ver historial</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="history" class="modal" style="width: 1000px;">
+				<div class="modal-title white">
+					<h4 class="blue-font center" style="margin-top: 20px">Historial de diligencias</h4>
+				</div>
+				<div class="modal-content white">
+					<div class="row">
+						<div class="col s12">
+							<table class="highlight data-table" id="deliveries">
+								<thead>
+									<tr>
+										<th class="center">Id</th>
+										<th class="center">Fecha</th>
+										<th class="center">Solicitante</th>
+										<th class="center">Valor</th>
+										<th class="center">Mensajero</th>
+										<th class="center">Duración</th>
+										<th class="center">Calificación</th>
+										<th class="center">Paradas</th>
+										<th class="nosort"></th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				load_history();
+
+				var table = $('#drivers').DataTable({
+					language: {
+						"lengthMenu": "Registros por página _MENU_",
+						"zeroRecords": "Lo sentimos, no hemos encontrado nada",
+						"info": "Mostrando página _PAGE_ de _PAGES_",
+						"infoEmpty": "No hay registros disponibles",
+						"infoFiltered": "(filtrado de un total de _MAX_ registros)",
+						"decimal": ",",
+						"thousands": ".",
+						"loadingRecords": "Cargando...",
+						"processing": "Procesando...",
+						"search": "Buscar:",
+						"paginate": {
+							"first": "Primera",
+							"previous": "Anterior",
+							"next": "Siguiente",
+							"last": "Última"
+						}
+					},
+					columnDefs: [{
+						"targets": "nosort",
+						"orderable": false
+					}],
+					order: [[1, "desc"]],
+					dom: 'rt<"bottom"lp>',
+					autoWidth: false
+				});
+
+				$('.dropdown-button').dropdown({
+					constrainWidth: false,
+					belowOrigin: true
+				});
+				$('select').material_select();
+				$('.button-collapse').sideNav('show');
+				$('.datepicker').pickadate({
+					selectMonths: true,
+					selectYears: 15,
+					format: "dd/mm/yyyy"
+				});
+				$('.modal').modal();
+				$('#ddate').pickadate('picker').set('select', '01/04/2017', { format: 'dd/mm/yyyy' });
+				$('#dropdown-city a').click(function(){
+					$('#city-selected').text($(this).text());
+				});
+				$('#dropdown-company a').click(function(){
+					$('#company-selected').text($(this).text());
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,285 @@
+<html>
+	<head>
+		<title>Diligencias</title>
+
+		<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/materialize-stepper.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize-stepper.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed navbar-wrapper">
+				<ul id="dropdown-city" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bogotá D.C.</a></li>
+					<li><a href="#" class="blue-font">Cali</a></li>
+					<li><a href="#" class="blue-font">Medellin</a></li>
+				</ul>
+				<ul id="dropdown-company" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bookink</a></li>
+					<li><a href="#" class="blue-font">Compensar</a></li>
+					<li><a href="#" class="blue-font">Prindel</a></li>
+				</ul>
+				<ul id="dropdown-user" class="dropdown-content">
+					<li><a href="profile.html" class="blue-font">Editar perfil</a></li>
+					<li><a href="new_password.html" class="blue-font">Cambiar contraseña</a></li>
+					<li><a href="roles.html" class="blue-font">Editar permisos</a></li>
+					<li class="divider"></li>
+					<li><a href="index.html" class="blue-font">Cerrar sesión</a></li>
+				</ul>
+				<nav class="white">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo red-container">
+							<img src="../img/diligencias blanco h.png">
+						</a>
+						<ul class="right">
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-city"><span id="city-selected">Ciudad </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-company"><span id="company-selected">Empresa </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li><a class="dropdown-button blue-font" href="#" data-activates="dropdown-user">Nombre de usuario<i class="material-icons right no-margin">arrow_drop_down</i><img src="../img/user.jpg" class="responsive-img circle right avatar"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<ul id="side-nav" class="side-nav fixed">
+				<li><a href="home.html"><i class="material-icons left">av_timer</i>Diligencias</a></li>
+				<li class="active"><a href="invoices.html"><i class="material-icons left">library_books</i>Facturación</a></li>
+				<li><a href="drivers.html"><i class="material-icons left">motorcycle</i>Mensajeros</a></li>
+				<li><a href="users.html"><i class="material-icons left">people</i>Usuarios</a></li>
+				<li><a href="companies.html"><i class="material-icons left">domain</i>Organizaciones</a></li>
+				<li><a href="reports.html"><i class="material-icons left">timeline</i>Reportes</a></li>
+			</ul>
+			<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+		</header>
+		<main class="main-content">
+			<div class="row bar-row">
+				<div class="col s12 m6">
+					<a href="invoices.html" class="blue-font prefix"><i class="material-icons left bar-icon">arrow_backward</i></a>
+					<h4>Detalles del servicio</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<div class="row data-row">
+						<div class="col s12 m6 left-align" style="font-size: 20px">Estado: <span class="red-font">En curso</span></div>
+						<div class="col s12 m6 right-align" style="font-size: 20px">Duración: <span class="red-font">124 Minutos</span></div>
+						<div class="col s12">
+							<ul class="progress-bar">
+								<li class="visited">Asignado<br><span>Abr 01, 2017</span><br><span>08:05 a.m.</span></li>
+								<li class="visited">Recogido<br><span>Abr 01, 2017</span><br><span>08:10 a.m.</span></li>
+								<li class="visited">En Ruta<br><span>Abr 01, 2017</span><br><span>08:15 a.m.</span></li>
+								<li class="visited">Entregado<br><span>Abr 01, 2017</span><br><span>09:15 a.m.</span></li>
+								<li class="visited">Finalizado<br><span>Abr 01, 2017</span><br><span>10:15 a.m.</span></li>
+								<li>Cancelado</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6">
+							<div class="card blue-container">
+								<div class="card-content">
+									<span class="card-title white-text center">
+										<span>Detalle de la diligencia</span>
+									</span>
+									<div class="row data-row">
+										<div class="input-field col s6">
+											<input type="text" name="owner" id="owner" value="Albeiro Andres Pabón Guzman" disabled>
+											<label for="owner">Solicitante</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="company" id="company" value="Compensar" disabled>
+											<label for="company">Empresa</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="calendar" id="calendar" value="09-03-2017" disabled>
+											<label for="calendar">Fecha</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="guide" id="guide" value="AD7919OP4286ED" disabled>
+											<label for="guide">Número de guía</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="amount" id="amount" value="$ 15.000" disabled>
+											<label for="amount">Valor</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="declared" id="declared" value="$ 25.000" disabled>
+											<label for="declared">Valor declarado</label>
+										</div>
+										<div class="input-field col s12">
+											<input type="text" name="collection" id="collection" value="No aplica" disabled>
+											<label for="collection">Recaudo</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="start" id="start" value="Si" disabled>
+											<label for="start">Volver al inicio</label>
+										</div>
+										<div class="input-field col s6">
+											<input type="text" name="distance" id="distance" value="11 Kilómetros" disabled>
+											<label for="distance">Distancias</label>
+										</div>
+										<div class="input-field col s12">
+											<textarea type="text" name="description" id="description" disabled>Recoger el paquete en el quinto piso. Preguntar en portería por Andrés Peña.</textarea>
+											<label for="description">Descripción</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="card white">
+								<div class="card-content">
+									<span class="card-title blue-font center">
+										<span>Información de entrega</span>
+									</span>
+									<div class="row data-row">
+										<div class="input-field col s12">
+											<input type="text" name="recipient" id="recipient" value="Albeiro Andres Pabón Guzman" disabled>
+											<label for="recipient">¿Quién recibió?</label>
+										</div>
+										<div class="input-field col s6">
+											<img src="../img/firma.png" class="img-squared">
+										</div>
+										<div class="input-field col s6">
+											<div class="row form-row">
+												<div class="input-field col s12">
+													<input type="text" name="code" id="code" value="AD7919OP4286ED" disabled>
+													<label for="code">Código del mensajero</label>
+												</div>
+												<div class="input-field col s12">
+													<input type="text" name="driver" id="driver" value="Marco Aurelio Astruas Ricon" disabled>
+													<label for="driver">Nombre del mensajero</label>
+												</div>
+												<div class="input-field col s12">
+													<a href="#" class="btn waves-effect btn-white btn-full"><i class="material-icons left">motorcycle</i> Ver mensajero</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row data-row">
+										<div class="col s6">
+											<span class="span-label">Calificación de la diligencia</span>
+											<div>
+												<i class="material-icons yellow-text text-darken-2">star</i>
+												<i class="material-icons yellow-text text-darken-2">star</i>
+												<i class="material-icons yellow-text text-darken-2">star</i>
+												<i class="material-icons yellow-text text-darken-2">star_half</i>
+												<i class="material-icons yellow-text text-darken-2">star_border</i>
+											</div>
+										</div>
+										<div class="col s6">
+											<span class="right">
+												<a href="#" class="btn waves-effect btn-white" style="margin-top: 10px;"><i class="material-icons left">file_download</i> Generar factura</a>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s4">
+							<div class="card">
+								<div class="card-action red-container white-text center"><h5>Paradas a realizar (5)</h5></div>
+								<div class="card-content">
+									<table class="bordered">
+										<tr>
+											<td><i class="material-icons left red-font">room</i>Parada 1</td>
+											<td>Carrera 29 # 77 - 32<i class="material-icons right green-text">done</i></td>
+										</tr>
+										<tr>
+											<td><i class="material-icons left red-font">room</i>Parada 2</td>
+											<td>Carrera 29 # 77 - 32<i class="material-icons right green-text">done</i></td>
+										</tr>
+										<tr>
+											<td><i class="material-icons left red-font">room</i>Parada 3</td>
+											<td>Carrera 29 # 77 - 32<i class="material-icons right green-text">done</i></td>
+										</tr>
+										<tr>
+											<td><i class="material-icons left red-font">room</i>Parada 4</td>
+											<td>Carrera 29 # 77 - 32<i class="material-icons right green-text">done</i></td>
+										</tr>
+										<tr>
+											<td><i class="material-icons left red-font">room</i>Parada 5</td>
+											<td>Carrera 29 # 77 - 32<i class="material-icons right green-text">done</i></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card">
+								<div class="card-action red-container white-text center"><h5>Contacto por parada</h5></div>
+								<div class="card-content">
+									<table class="bordered">
+										<tr>
+											<td class="blue-font">Nombre de Contacto 1</td>
+											<td class="right">Teléfono 1</td>
+										</tr>
+										<tr>
+											<td class="blue-font">Nombre de Contacto 2</td>
+											<td class="right">Teléfono 2</td>
+										</tr>
+										<tr>
+											<td class="blue-font">Nombre de Contacto 3</td>
+											<td class="right">Teléfono 3</td>
+										</tr>
+										<tr>
+											<td class="blue-font">Nombre de Contacto 4</td>
+											<td class="right">Teléfono 4</td>
+										</tr>
+										<tr>
+											<td class="blue-font">Nombre de Contacto 5</td>
+											<td class="right">Teléfono 5</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card">
+								<div class="card-image">
+									<img src="../img/map.png" style="height: 355px">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.dropdown-button').dropdown({
+					constrainWidth: false,
+					belowOrigin: true
+				});
+				$('select').material_select();
+				$('.button-collapse').sideNav('show');
+				$('.datepicker').pickadate({
+					selectMonths: true,
+					selectYears: 15,
+					format: "dd/mm/yyyy"
+				});
+				$('#ddate').pickadate('picker').set('select', '01/04/2017', { format: 'dd/mm/yyyy' });
+				$('#dropdown-city a').click(function(){
+					$('#city-selected').text($(this).text());
+				});
+				$('#dropdown-company a').click(function(){
+					$('#company-selected').text($(this).text());
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+/** Main Tags **/
+body{
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+main{
+	flex: 1 0 auto;
+}
+
+/** Forms **/
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+	border-bottom: 1px solid #fff;
+    box-shadow: 0 1px 0 0 #fff;
+}
+input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #fff;
+}
+.input-field{
+	margin-top: 0px !important;
+}
+.red-prindel{
+	background: #343466;
+	border: solid 1px #fff;
+}
+.btn.red-prindel:hover, .btn-large.red-prindel:hover{
+	background: #fff;
+	color: #343466;
+}
+
+/** Containers **/
+.login-img-container{
+	background: url(../img/background.jpeg);
+	min-height: 100vh !important;
+	background-size: cover;
+}
+.login-row{
+	margin-bottom: 0px;
+}
+.blue-container{
+	background: #343466;
+	padding: 0px !important;
+	min-height: 100vh !important;
+}
+.main-footer{
+	background: transparent !important;
+}
+.sub-footer{
+	margin-top: 10%;
+}
+
+/** Boxes **/
+.login-box{
+	margin-top: 10%;
+}

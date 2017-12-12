@@ -1,0 +1,658 @@
+<html>
+	<head>
+		<title>Diligencias</title>
+
+		<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/materialize-stepper.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="../css/jquery.timepicker.css">
+		<link rel="stylesheet" href="../css/tooltipster.bundle.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize-stepper.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.timepicker.min.js"></script>
+		<script type="text/javascript" src="../js/tooltipster.bundle.min.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed navbar-wrapper">
+				<ul id="dropdown-city" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bogotá D.C.</a></li>
+					<li><a href="#" class="blue-font">Cali</a></li>
+					<li><a href="#" class="blue-font">Medellin</a></li>
+				</ul>
+				<ul id="dropdown-company" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bookink</a></li>
+					<li><a href="#" class="blue-font">Compensar</a></li>
+					<li><a href="#" class="blue-font">Prindel</a></li>
+				</ul>
+				<ul id="dropdown-user" class="dropdown-content">
+					<li><a href="profile.html" class="blue-font">Editar perfil</a></li>
+					<li><a href="new_password.html" class="blue-font">Cambiar contraseña</a></li>
+					<li><a href="roles.html" class="blue-font">Editar permisos</a></li>
+					<li class="divider"></li>
+					<li><a href="index.html" class="blue-font">Cerrar sesión</a></li>
+				</ul>
+				<nav class="white">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo red-container">
+							<img src="../img/diligencias blanco h.png">
+						</a>
+						<ul class="right">
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-city"><span id="city-selected">Ciudad </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-company"><span id="company-selected">Empresa </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li><a class="dropdown-button blue-font" href="#" data-activates="dropdown-user">Nombre de usuario<i class="material-icons right no-margin">arrow_drop_down</i><img src="../img/user.jpg" class="responsive-img circle right avatar"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<ul id="side-nav" class="side-nav fixed">
+				<li class="active"><a href="home.html"><i class="material-icons left">av_timer</i>Diligencias</a></li>
+				<li><a href="invoices.html"><i class="material-icons left">library_books</i>Facturación</a></li>
+				<li><a href="drivers.html"><i class="material-icons left">motorcycle</i>Mensajeros</a></li>
+				<li><a href="users.html"><i class="material-icons left">people</i>Usuarios</a></li>
+				<li><a href="companies.html"><i class="material-icons left">domain</i>Organizaciones</a></li>
+				<li><a href="reports.html"><i class="material-icons left">timeline</i>Reportes</a></li>
+			</ul>
+			<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+		</header>
+		<main class="main-content">
+			<div class="row bar-row">
+				<div class="col s12 m6">
+					<h4>Nueva diligencia</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+					<div class="row panel-row white">
+						<div class="col s12">
+							<ul class="tabs">
+								<li class="tab col s6"><a href="#manual" class="active">Cargar manualmente</a></li>
+								<li class="tab col s6"><a href="#auto">Cargar archivo</a></li>
+							</ul>
+						</div>
+						<div id="manual" class="col s12">
+							<div class="row">
+								<div class="col s12">
+									<ul data-method="get" class="stepper linear">
+										<li class="step active">
+											<div class="step-title">Paradas<span class="tooltip right" title="Solo debes hacer clic en el recuadro para desplegar las opciones de registro para tu parada"><i class="material-icons blue-font">info</i><span></div>
+											<div class="step-content">
+												<div class="row">
+													<div class="input-field col s12">
+														<select name="cities" id="cities">
+															<option value="1">Bogotá D.C.</option>
+															<option value="2">Cali</option>
+															<option value="3">Medellin</option>
+														</select>
+														<label for="cities" class="no-left">Ciudad</label>
+													</div>
+													<div class="col s12">
+														<a href="#add-point">
+															<div class="stepper-step grey-text text-darken-2">
+																<i class="material-icons circle blue white-text left">add</i>Parada inicial de tu recorrido
+															</div>
+														</a>
+													</div>
+													<div class="col s12">
+														<a href="#add-point">
+															<div class="stepper-step grey-text text-darken-2">
+																<i class="material-icons circle green white-text left">add</i>Parada final de tu recorrido
+															</div>
+														</a>
+													</div>
+													<div class="col s12">
+														<a href="#add-point">
+															<div class="stepper-step inactive grey-text text-darken-2">
+																<i class="material-icons circle orange white-text left">add</i>Nueva parada
+															</div>
+														</a>
+													</div>
+												</div>
+												<div class="step-actions">
+													<button class="btn waves-effect next-step blue-container" onclick="next">Siguiente</button>
+												</div>
+											</div>
+										</li>
+										<li class="step">
+											<div class="step-title">Opciones de recorrido</div>
+											<div class="step-content">
+												<div class="row switch-row">
+													<div class="input-field col s6">
+														<input type="date" class="datepicker" name="schedule" id="schedule">
+														<label for="schedule" class="no-left">Fecha</label>
+													</div>
+													<div class="input-field col s6">
+															<input type="text" id="timepicker" name="timer" id="timer">
+														<label for="timer" class="no-left">Hora</label>
+													</div>
+													<div class="input-field col s12">
+														<input type="checkbox" class="filled-in" name="daily" id="daily">
+														<label for="daily">Programar a diario</label>
+													</div>
+												</div>
+												<div class="row switch-row">
+													<div class="col s12">
+														<span class="tooltip right" title="Utiliza esta opción si necesitas que el mensajero realice un registro fotográfico de la diligencia (Ej: fotografiar un radicado o recibo de pago)"><i class="material-icons blue-font">info</i><span>
+													</div>
+													<div class="col s6 switch">
+														<label>
+															<input type="checkbox">
+															<span class="lever"></span>
+															Volver al inicio
+														</label>
+													</div>
+													<div class="col s6 switch">
+														<label>
+															<input type="checkbox">
+															<span class="lever" id="camera"></span>
+															Soporte fotográfico
+														</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<div class="stepper-step grey-text text-darken-2">
+															<i class="material-icons circle blue white-text left">attach_money</i>
+															<input type="text" name="declared" id="declared" placeholder="Declara el valor de tu diligencia">
+														</div>
+													</div>
+													<div class="col s12">
+														<div class="stepper-step grey-text text-darken-2">
+															<i class="material-icons circle orange white-text left">local_offer</i>
+															<input type="text" name="coupon" id="coupon" placeholder="¡Activa tu cupón ahora!">
+														</div>
+													</div>
+												</div>
+												<div class="step-actions">
+													<button class="btn waves-effect next-step blue-container" onclick="next">Siguiente</button>
+												</div>
+											</div>
+										</li>
+										<li class="step">
+											<div class="step-title">Medio de pago<span class="tooltip right" title="Selecciona el medio de pago de acuerdo con tu plan"><i class="material-icons blue-font">info</i><span></div>
+											<div class="step-content">
+												<div class="row">
+													<div class="col s12">
+														<input type="radio" name="method" id="cash">
+														<label for="cash">Efectivo</label>
+													</div>
+													<div class="col s12">
+														<input type="radio" name="method" id="card">
+														<label for="card">Tarjeta de Crédito</label>
+													</div>
+													<div class="col s12">
+														<input type="radio" name="method" id="save">
+														<label for="save">Agregar a la Cuenta</label>
+													</div>
+												</div>
+												<div class="row input-row">
+													<div class="input-field col s6">
+														<input type="text" name="cost" id="cost" value="$30.000" disabled>
+														<label for="cost" class="no-left">Valor estimado</label>
+													</div>
+													<div class="input-field col s6">
+														<input type="text" name="distance" id="distance" value="16Km" disabled>
+														<label for="distance" class="no-left">Distancia a recorrer</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<a class="btn waves-effect red-container btn-full" id="save-one">Solicitar servicio<i class="material-icons right">arrow_forward</i></a>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<a class="btn waves-effect grey-container btn-full" href="delivery.html">Pedir otro servicio<i class="material-icons right">arrow_forward</i></a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="auto" class="col s12">
+							<div class="row">
+								<div class="col s12">
+									<ul data-method="get" class="stepper linear">
+										<li class="step active">
+											<div class="step-title">Archivo base de la diligencia<span class="tooltip right" title="Si quieres subir todas las direcciones o pedir simultáneamente muchas diligencias, puedes cargar un archivo base"><i class="material-icons blue-font">info</i><span></div>
+											<div class="step-content">
+												<div class="row">
+													<div class="col s12">
+														<a href="#" class="btn waves-effect btn-full btn-download"><i class="material-icons green-text left">insert_drive_file</i>Descargar formato</a>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<form action="#">
+															<div class="file-field input-field">
+																<div class="btn green">
+																	<span><i class="material-icons">file_upload</i></span>
+																	<input type="file">
+																</div>
+																<div class="file-path-wrapper">
+																	<input class="file-path" type="text" placeholder="Subir la base">
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+												<div class="step-actions">
+													<button class="btn waves-effect next-step blue-container" onclick="next">Siguiente</button>
+												</div>
+											</div>
+										</li>
+										<li class="step">
+											<div class="step-title">Medio de pago<span class="tooltip right" title="Selecciona el medio de pago de acuerdo con tu plan"><i class="material-icons blue-font">info</i><span></div>
+											<div class="step-content">
+												<div class="row">
+													<div class="col s12">
+														<input type="radio" name="method" id="cash-auto">
+														<label for="cash-auto">Efectivo</label>
+													</div>
+													<div class="col s12">
+														<input type="radio" name="method" id="card-auto">
+														<label for="card-auto">Tarjeta de Crédito</label>
+													</div>
+													<div class="col s12">
+														<input type="radio" name="method" id="save-auto">
+														<label for="save-auto">Agregar a la Cuenta</label>
+													</div>
+												</div>
+												<div class="row input-row">
+													<div class="input-field col s6">
+														<input type="text" name="cost-auto" id="cost-auto" value="$30.000" disabled>
+														<label for="cost-auto" class="no-left">Valor estimado</label>
+													</div>
+													<div class="input-field col s6">
+														<input type="text" name="distance-auto" id="distance-auto" value="16Km" disabled>
+														<label for="distance-auto" class="no-left">Distancia a recorrer</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<a class="btn waves-effect red-container btn-full">Solicitar servicio<i class="material-icons right">arrow_forward</i></a>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12">
+														<a class="btn waves-effect grey-container btn-full">Pedir otro servicio<i class="material-icons right">arrow_forward</i></a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s8" id="map"></div>
+			</div>
+			<div id="add-point" class="modal">
+				<div class="modal-title blue-container white-text">
+					<h5 class="center"><i class="material-icons white-text right circle">done</i>Nueva parada</h5>
+				</div>
+				<div class="modal-content">
+					<div class="row inner-row">
+						<form class="col s12">
+							<div class="input-field">
+								<input type="text" name="add-address" id="add-address">
+								<label for="add-address">Dirección</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="add-details" id="add-details">
+								<label for="add-details">¿Qué hacemos por ti?¿Alguna indicación adicional?</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="add-contact" id="add-contact">
+								<label for="add-contact">¿Si tenemos alguna inquietud con quien nos comunicamos?</label>
+							</div>
+							<div class="input-field">
+								<input type="text" name="add-phone" id="add-phone">
+								<label for="add-phone">Teléfono</label>
+							</div>
+							<div class="input-field center">
+								<a class="btn waves-effect red-container">Guardar</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="base" class="modal" style="width: 90%">
+				<div class="modal-title blue-container white-text">
+					<h5 class="center"><i class="material-icons white-text right circle">done</i>Cargue de base</h5>
+				</div>
+				<div class="modal-content">
+					<div class="row bar-row">
+						<div class="col s12 right-align">
+							<a class="btn waves-effect grey-container"><i class="material-icons left">motorcycle</i>Ver mensajeros disponibles</a>
+							<a class="btn waves-effect blue-container"><i class="material-icons left">file_download</i>Solicitar y descargar guía</a>
+							<a href="#" class="btn waves-effect red-container" id="save-all"><i class="material-icons left">save</i>Guardar</a>
+						</div>
+					</div>
+					<ul class="collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header active">Diligencia (1)</div>
+							<div class="collapsible-body">
+								<div class="row collapsible-row">
+									<div class="col s12 right-align">
+										<i class="material-icons">search</i>
+										<i class="material-icons">create</i>
+										<i class="material-icons">more_vert</i>
+									</div>
+								</div>
+								<div class="row collapsible-row">
+									<div class="col s12 m4"><i class="material-icons blue-font">event</i> Fecha: 03/06/2017</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">motorcycle</i> Tipo de diligencia: Puntos registrados</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">attach_money</i> Valor declarado: $68.900</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">reply</i> Volver al inicio: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">camera_alt</i> Soporte fotográfico: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">account_balance_wallet</i> Método de pago: Cuenta de cobro</div>
+								</div>
+								<div>
+									<table class="stops-table">
+										<tr>
+											<td class="center">
+												<h6>Parada 1</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 2</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 3</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 4</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 5</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 6</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 7</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Diligencia (2)</div>
+							<div class="collapsible-body">
+								<div class="row collapsible-row">
+									<div class="col s12 right-align">
+										<i class="material-icons">search</i>
+										<i class="material-icons">create</i>
+										<i class="material-icons">more_vert</i>
+									</div>
+								</div>
+								<div class="row collapsible-row">
+									<div class="col s12 m4"><i class="material-icons blue-font">event</i> Fecha: 03/06/2017</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">motorcycle</i> Tipo de diligencia: Puntos registrados</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">attach_money</i> Valor declarado: $68.900</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">reply</i> Volver al inicio: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">camera_alt</i> Soporte fotográfico: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">account_balance_wallet</i> Método de pago: Cuenta de cobro</div>
+								</div>
+								<div>
+									<table class="stops-table">
+										<tr>
+											<td class="center">
+												<h6>Parada 1</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 2</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 3</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 4</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Diligencia (3)</div>
+							<div class="collapsible-body">
+								<div class="row collapsible-row">
+									<div class="col s12 right-align">
+										<i class="material-icons">search</i>
+										<i class="material-icons">create</i>
+										<i class="material-icons">more_vert</i>
+									</div>
+								</div>
+								<div class="row collapsible-row">
+									<div class="col s12 m4"><i class="material-icons blue-font">event</i> Fecha: 03/06/2017</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">motorcycle</i> Tipo de diligencia: Puntos registrados</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">attach_money</i> Valor declarado: $68.900</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">reply</i> Volver al inicio: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">camera_alt</i> Soporte fotográfico: Si</div>
+									<div class="col s12 m4"><i class="material-icons blue-font">account_balance_wallet</i> Método de pago: Cuenta de cobro</div>
+								</div>
+								<div>
+									<table class="stops-table">
+										<tr>
+											<td class="center">
+												<h6>Parada 1</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 2</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 3</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 4</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 5</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 6</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 7</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+										</tr>
+										<tr>
+											<td class="center">
+												<h6>Parada 8</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 9</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 10</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 11</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 12</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 13</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+											<td class="center">
+												<h6>Parada 14</h6>
+												<p>Cra 29 # 89 - 90</p>
+												<p>Recoger el sobre en el 10mo piso Apto 10-02 y pedir las llaves en portería</p>
+												<p>328161813151</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="finish" class="modal">
+				<div class="modal-title white">
+					<h4 class="blue-font center">¡Comencemos a trabajar!</h4>
+				</div>
+				<div class="modal-content white">
+					<div class="row">
+						<div class="col s12">
+							<h5>¡Estamos asignando un mensajero para tu Diligencia, danos unos minutos!</h5>
+						</div>
+						<div class="col s12">
+							<i class="material-icons blue-font" style="margin-left: 48%">motorcycle</i>
+							<div class="progress">
+								<div class="determinate" style="width: 50%"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 40px">
+						<div class="col s12 m6">
+							<a class="btn waves-effect modal-close btn-white" href="home.html">Entendido</a>
+						</div>
+						<div class="col s12 m6 right-align">
+							<a class="btn waves-effect modal-close btn-white" href="new.html">Nueva diligencia</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.dropdown-button').dropdown({
+					constrainWidth: false,
+					belowOrigin: true
+				});
+				$('select').material_select();
+				$('.button-collapse').sideNav('show');
+				$('.datepicker').pickadate({
+					selectMonths: true,
+					selectYears: 15,
+					format: "dd/mm/yyyy"
+				});
+				$('#timepicker').timepicker({
+					'minTime': '6:00am',
+					'maxTime': '7:00pm',
+					'step': '10'
+				});
+				$('.tooltip').tooltipster({
+					'side': 'right',
+					'maxWidth': 300
+				});
+				$('#schedule').pickadate('picker').set('select', '01/04/2017', { format: 'dd/mm/yyyy' });
+				$('#dropdown-city a').click(function(){
+					$('#city-selected').text($(this).text());
+				});
+				$('#dropdown-company a').click(function(){
+					$('#company-selected').text($(this).text());
+				});
+				$('.stepper').activateStepper();
+				$('.modal').modal();
+				$('input[type=file]').change(function(){
+					$('#base').modal('open');
+				});
+				$('#save-one').click(function(){
+					$('#finish').modal('open');
+				});
+				$('#save-all').click(function(){
+					$('#base').modal('close');
+					$('#finish').modal('open');
+				});
+
+				var map = new google.maps.Map(document.getElementById('map'), {
+					center: {lat: 4.6703015, lng: -74.0706639},
+					zoom: 18
+				});
+			});
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js" async defer></script>
+	</body>
+</html>

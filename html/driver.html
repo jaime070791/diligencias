@@ -1,0 +1,451 @@
+<html>
+	<head>
+		<title>Diligencias</title>
+
+		<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/materialize-stepper.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize-stepper.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed navbar-wrapper">
+				<ul id="dropdown-city" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bogotá D.C.</a></li>
+					<li><a href="#" class="blue-font">Cali</a></li>
+					<li><a href="#" class="blue-font">Medellin</a></li>
+				</ul>
+				<ul id="dropdown-company" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bookink</a></li>
+					<li><a href="#" class="blue-font">Compensar</a></li>
+					<li><a href="#" class="blue-font">Prindel</a></li>
+				</ul>
+				<ul id="dropdown-user" class="dropdown-content">
+					<li><a href="profile.html" class="blue-font">Editar perfil</a></li>
+					<li><a href="new_password.html" class="blue-font">Cambiar contraseña</a></li>
+					<li><a href="roles.html" class="blue-font">Editar permisos</a></li>
+					<li class="divider"></li>
+					<li><a href="index.html" class="blue-font">Cerrar sesión</a></li>
+				</ul>
+				<nav class="white">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo red-container">
+							<img src="../img/diligencias blanco h.png">
+						</a>
+						<ul class="right">
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-city"><span id="city-selected">Ciudad </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-company"><span id="company-selected">Empresa </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li><a class="dropdown-button blue-font" href="#" data-activates="dropdown-user">Nombre de usuario<i class="material-icons right no-margin">arrow_drop_down</i><img src="../img/user.jpg" class="responsive-img circle right avatar"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<ul id="side-nav" class="side-nav fixed">
+				<li><a href="home.html"><i class="material-icons left">av_timer</i>Diligencias</a></li>
+				<li><a href="invoices.html"><i class="material-icons left">library_books</i>Facturación</a></li>
+				<li class="active"><a href="drivers.html"><i class="material-icons left">motorcycle</i>Mensajeros</a></li>
+				<li><a href="users.html"><i class="material-icons left">people</i>Usuarios</a></li>
+				<li><a href="companies.html"><i class="material-icons left">domain</i>Organizaciones</a></li>
+				<li><a href="reports.html"><i class="material-icons left">timeline</i>Reportes</a></li>
+			</ul>
+			<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+		</header>
+		<main class="main-content">
+			<div class="row bar-row">
+				<div class="col s12 m6">
+					<a href="home.html" class="blue-font prefix"><i class="material-icons left bar-icon">arrow_backward</i></a>
+					<h4>Detalles del mensajero</h4>
+				</div>
+				<div class="col s12 m6 right-align">
+					<a class="btn waves-effect red-container">Actualizar datos</a>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12">
+					<div class="card blue-container">
+						<div class="card-content">
+							<span class="card-title white-text">
+								<span>Información del mensajero</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m3 center">
+									<img src="../img/driver.jpg" class="circle">
+									<div style="margin-top: 20px">
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star</i>
+										<i class="material-icons white-text">star_half</i>
+										<i class="material-icons white-text">star_border</i>
+									</div>
+								</div>
+								<div class="col s12 m9">
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="status" id="status" value="Activo" disabled>
+												<label for="status">Estado</label>
+											</div>
+										</div>
+										<div class="col s12 m8">
+											<div class="input-field">
+												<input type="text" name="code" id="code" value="AD7919OP" disabled>
+												<label for="code">Código</label>
+											</div>
+										</div>
+									</div>
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="firstname" id="firstname" value="Marco Aurelio" disabled>
+												<label for="firstname">Nombre</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="lastname" id="lastname" value="Astruas Rincon" disabled>
+												<label for="lastname">Apellidos</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="identifier" id="identifier" value="1763944631" disabled>
+												<label for="identifier">Cédula</label>
+											</div>
+										</div>
+									</div>
+									<div class="row data-row">
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="type" id="type" value="Dedicado - Interno" disabled>
+												<label for="type">Tipo de mensajero</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="birthdate" id="birthdate" value="11 de Noviembre de 1976" disabled>
+												<label for="birthdate">Fecha de nacimiento</label>
+											</div>
+										</div>
+										<div class="col s12 m4">
+											<div class="input-field">
+												<input type="text" name="services" id="services" value="47" disabled>
+												<label for="services">Diligencias realizadas</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12 m6">
+					<div class="card white">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información de contacto</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="city" id="city" value="Bogotá D.C." disabled>
+										<label for="city">Ciudad</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="location" id="location" value="Chapinero" disabled>
+										<label for="location">Barrio</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="phone" id="phone" value="8765432" disabled>
+										<label for="phone">Teléfono (1)</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="address" id="address" value="Carrera 22 # 89 - 90" disabled>
+										<label for="address">Dirección de residencia</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="mobile" id="mobile" value="3123123123" disabled>
+										<label for="mobile">Celular (1)</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="email" id="email" value="elmensajero@diligencias.com" disabled>
+										<label for="email">Correo electrónico</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card white">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información del vehículo</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="type" id="type" value="Moto" disabled>
+										<label for="type">Tipo de vehículo</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="brand" id="brand" value="AKT" disabled>
+										<label for="brand">Marca</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="model" id="model" value="Moto" disabled>
+										<label for="model">Modelo</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="chasis" id="chasis" value="USK34K" disabled>
+										<label for="chasis">Número de chasis</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="soat" id="soat" value="31 de Octubre de 2017" disabled>
+										<label for="soat">Fecha de vencimiento SOAT</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="techno" id="techno" value="15 de Febrero de 2018" disabled>
+										<label for="techno">Fecha de vencimiento tecnicomecánica</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row data-row">
+				<div class="col s12 m6">
+					<div class="card grey lighten-3">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información persona de referencia</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person" id="person" value="Carmen Rojas" disabled>
+										<label for="person">Nombre</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="family" id="family" value="Hermana" disabled>
+										<label for="family">Parentesco</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person_phone" id="person_phone" value="7634523" disabled>
+										<label for="person_phone">Teléfono (1)</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="person_address" id="person_address" value="Carrera 22 # 89 - 90" disabled>
+										<label for="person_address">Dirección de residencia</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<div class="card grey lighten-3">
+						<div class="card-content">
+							<span class="card-title blue-font center">
+								<span>Información bancaria</span>
+							</span>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<select name="account" id="account" disabled>
+											<option value="0">- Selecciona una opción -</option>
+											<option value="1" selected>Persona natural</option>
+											<option value="2">Persona jurídica</option>
+										</select>
+										<label for="account">Tipo de cuenta bancaria</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<select name="bank" id="bank" disabled>
+											<option value="0">- Selecciona una opción -</option>
+											<option value="1" selected>Bancolombia</option>
+											<option value="2">BBVA</option>
+											<option value="3">Colpatria</option>
+											<option value="4">Helm</option>
+										</select>
+										<label for="bank">Banco</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="acc_number" id="acc_number" value="13984964342438" disabled>
+										<label for="acc_number">Número de cuenta</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<h5 class="blue-font">Estado de cuenta</h5>
+					<div class="collection z-depth-1">
+						<a href="#" class="collection-item blue-font">Fotocopia cédula <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Tarjeta de propiedad moto <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">SOAT de la moto <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Revisión tecnicomecánica <i class="material-icons right">file_download</i></a>
+						<a href="#" class="collection-item blue-font">Licencia conducción <i class="material-icons right">file_download</i></a>
+					</div>
+					<div class="card white">
+						<div class="card-content">
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="collection" id="collection" value="$ 8.500" disabled>
+										<label for="collection">Recaudo pendiente</label>
+									</div>
+								</div>
+								<div class="col s12 m6">
+									<div class="input-field">
+										<input type="text" name="payment" id="payment" value="$ 168.800" disabled>
+										<label for="payment">Pago acumulado pendiente</label>
+									</div>
+								</div>
+							</div>
+							<div class="row data-row">
+								<div class="col s12 m6">
+									<a href="#" class="btn waves-effect btn-white btn-full"><i class="material-icons left">attach_money</i> Cruce de cuentas</a>
+								</div>
+								<div class="col s12 m6">
+									<a href="#history" class="btn waves-effect btn-white btn-full"><i class="material-icons left">motorcycle</i> Ver historial</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<h5 class="blue-font">Última ubicación conocida <a href="#" class="blue-font"><i class="material-icons right">replay</i></a></h5>
+					<img src="../img/map.png" class="z-depth-1" style="width: 100%; height: 380px">
+				</div>
+			</div>
+			<div id="history" class="modal" style="width: 1000px;">
+				<div class="modal-title white">
+					<h4 class="blue-font center" style="margin-top: 20px">Historial de diligencias</h4>
+				</div>
+				<div class="modal-content white">
+					<div class="row">
+						<div class="col s12">
+							<table class="highlight data-table" id="deliveries">
+								<thead>
+									<tr>
+										<th class="center">Id</th>
+										<th class="center">Fecha</th>
+										<th class="center">Solicitante</th>
+										<th class="center">Valor</th>
+										<th class="center">Mensajero</th>
+										<th class="center">Duración</th>
+										<th class="center">Calificación</th>
+										<th class="center">Paradas</th>
+										<th class="nosort"></th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				load_history();
+
+				var table = $('#drivers').DataTable({
+					language: {
+						"lengthMenu": "Registros por página _MENU_",
+						"zeroRecords": "Lo sentimos, no hemos encontrado nada",
+						"info": "Mostrando página _PAGE_ de _PAGES_",
+						"infoEmpty": "No hay registros disponibles",
+						"infoFiltered": "(filtrado de un total de _MAX_ registros)",
+						"decimal": ",",
+						"thousands": ".",
+						"loadingRecords": "Cargando...",
+						"processing": "Procesando...",
+						"search": "Buscar:",
+						"paginate": {
+							"first": "Primera",
+							"previous": "Anterior",
+							"next": "Siguiente",
+							"last": "Última"
+						}
+					},
+					columnDefs: [{
+						"targets": "nosort",
+						"orderable": false
+					}],
+					order: [[1, "desc"]],
+					dom: 'rt<"bottom"lp>',
+					autoWidth: false
+				});
+
+				$('.dropdown-button').dropdown({
+					constrainWidth: false,
+					belowOrigin: true
+				});
+				$('select').material_select();
+				$('.button-collapse').sideNav('show');
+				$('.datepicker').pickadate({
+					selectMonths: true,
+					selectYears: 15,
+					format: "dd/mm/yyyy"
+				});
+				$('.modal').modal();
+				$('#ddate').pickadate('picker').set('select', '01/04/2017', { format: 'dd/mm/yyyy' });
+				$('#dropdown-city a').click(function(){
+					$('#city-selected').text($(this).text());
+				});
+				$('#dropdown-company a').click(function(){
+					$('#company-selected').text($(this).text());
+				});
+			});
+		</script>
+	</body>
+</html>

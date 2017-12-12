@@ -1,0 +1,191 @@
+<html>
+	<head>
+		<title>Diligencias</title>
+
+		<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+		<link rel="stylesheet" href="../css/materialize.min.css">
+		<link rel="stylesheet" href="../css/materialize-stepper.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize-stepper.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed navbar-wrapper">
+				<ul id="dropdown-city" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bogotá D.C.</a></li>
+					<li><a href="#" class="blue-font">Cali</a></li>
+					<li><a href="#" class="blue-font">Medellin</a></li>
+				</ul>
+				<ul id="dropdown-company" class="dropdown-content">
+					<li><a href="#" class="blue-font">Bookink</a></li>
+					<li><a href="#" class="blue-font">Compensar</a></li>
+					<li><a href="#" class="blue-font">Prindel</a></li>
+				</ul>
+				<ul id="dropdown-user" class="dropdown-content">
+					<li><a href="profile.html" class="blue-font">Editar perfil</a></li>
+					<li><a href="new_password.html" class="blue-font">Cambiar contraseña</a></li>
+					<li><a href="roles.html" class="blue-font">Editar permisos</a></li>
+					<li class="divider"></li>
+					<li><a href="index.html" class="blue-font">Cerrar sesión</a></li>
+				</ul>
+				<nav class="white">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo red-container">
+							<img src="../img/diligencias blanco h.png">
+						</a>
+						<ul class="right">
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-city"><span id="city-selected">Ciudad </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li>
+								<a class="dropdown-button blue-font" href="#" data-activates="dropdown-company"><span id="company-selected">Empresa </span><i class="material-icons right">arrow_drop_down</i></a>
+							</li>
+							<li><a class="dropdown-button blue-font" href="#" data-activates="dropdown-user">Nombre de usuario<i class="material-icons right no-margin">arrow_drop_down</i><img src="../img/user.jpg" class="responsive-img circle right avatar"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<ul id="side-nav" class="side-nav fixed">
+				<li class="active"><a href="home.html"><i class="material-icons left">av_timer</i>Diligencias</a></li>
+				<li><a href="invoices.html"><i class="material-icons left">library_books</i>Facturación</a></li>
+				<li><a href="drivers.html"><i class="material-icons left">motorcycle</i>Mensajeros</a></li>
+				<li><a href="users.html"><i class="material-icons left">people</i>Usuarios</a></li>
+				<li><a href="companies.html"><i class="material-icons left">domain</i>Organizaciones</a></li>
+				<li><a href="reports.html"><i class="material-icons left">timeline</i>Reportes</a></li>
+			</ul>
+			<a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+		</header>
+		<main class="main-content">
+			<div class="row bar-row">
+				<div class="col s12 m6">
+					<h4>Diligencias</h4>
+				</div>
+				<div class="col s12 m6 right-align">
+					<a class="btn waves-effect blue-container">Generar factura</a>
+					<a href="new.html" class="btn waves-effect red-container">Solicitar diligencia</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="left date-label">Filtrar por fecha:</div>
+					<div class="left input-field date-field">
+						<i class="material-icons prefix">event</i>
+						<input type="date" class="datepicker" name="start" id="start" value="01/04/2017">
+					</div>
+					<div class="left input-field date-field">
+						<i class="material-icons prefix">event</i>
+						<input type="date" class="datepicker" name="end" id="end" value="01/05/2017">
+					</div>
+				</div>
+				<div class="col s12 m6">
+					<a class="btn btn-flat right" href="#" onclick="save_filter()"><i class="material-icons left">add</i> Agregar filtro</a>
+					<div class="right input-field date-field">
+						<input type="text" name="filter-field" id="filter-field" placeholder="Texto a buscar">
+					</div>
+					<div class="right input-field date-field">
+						<select class="browser-default" name="filter-type" id="filter-type">
+							<option value="0">Id</option>
+							<option value="1">Estado</option>
+							<option value="2">Paradas</option>
+							<option value="3">Distancia</option>
+							<option value="4">Empresa</option>
+							<option value="5">Mensajero</option>
+						</select>
+					</div>
+					<div class="right date-label">Filtrar por:</div>
+				</div>
+				<div class="col s12" id="all-filters"></div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<ul id="delivery_menu" class="dropdown-content">
+						<li><a href="#" class="blue-font">Editar diligencia</a></li>
+						<li><a href="#" class="blue-font">Cancelar diligencia</a></li>
+						<li class="divider"></li>
+						<li><a href="#" class="blue-font">Generar factura</a></li>
+					</ul>
+					<table class="highlight data-table" id="deliveries">
+						<thead>
+							<tr>
+								<th class="nosort"></th>
+								<th class="center">Fecha</th>
+								<th class="center">Id</th>
+								<th class="center">Espera</th>
+								<th class="center">Estado</th>
+								<th class="center">Valor Total</th>
+								<th class="center">V. Recaudo</th>
+								<th class="nosort center">Paradas</th>
+								<th class="center">Distancia</th>
+								<th class="center">Empresa</th>
+								<th class="center">Mensajero</th>
+								<th class="nosort"></th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				load_deliveries();
+
+				var table = $('#deliveries').DataTable({
+					language: {
+						"lengthMenu": "Registros por página _MENU_",
+						"zeroRecords": "Lo sentimos, no hemos encontrado nada",
+						"info": "Mostrando página _PAGE_ de _PAGES_",
+						"infoEmpty": "No hay registros disponibles",
+						"infoFiltered": "(filtrado de un total de _MAX_ registros)",
+						"decimal": ",",
+						"thousands": ".",
+						"loadingRecords": "Cargando...",
+						"processing": "Procesando...",
+						"search": "Buscar:",
+						"paginate": {
+							"first": "Primera",
+							"previous": "Anterior",
+							"next": "Siguiente",
+							"last": "Última"
+						}
+					},
+					columnDefs: [{
+						"targets": "nosort",
+						"orderable": false
+					}],
+					order: [[1, "desc"]],
+					dom: 'rt<"bottom"lp>',
+					autoWidth: false
+				});
+
+				$('.dropdown-button').dropdown({
+					constrainWidth: false,
+					belowOrigin: true
+				});
+				$('select').material_select();
+				$('.button-collapse').sideNav('show');
+				$('.datepicker').pickadate({
+					selectMonths: true,
+					selectYears: 15,
+					format: "dd/mm/yyyy"
+				});
+				$('#start').pickadate('picker').set('select', '01/04/2017', { format: 'dd/mm/yyyy' });
+				$('#end').pickadate('picker').set('select', '01/05/2017', { format: 'dd/mm/yyyy' });
+				$('#dropdown-city a').click(function(){
+					$('#city-selected').text($(this).text());
+				});
+				$('#dropdown-company a').click(function(){
+					$('#company-selected').text($(this).text());
+				});
+			});
+		</script>
+	</body>
+</html>
